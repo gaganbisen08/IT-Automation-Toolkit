@@ -28,3 +28,13 @@ To maintain system integrity, this script should be run without permanently alte
 This bypasses the execution policy **only for this specific run**:
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -File .\MaintenanceToolkit.ps1
+
+```
+
+## ⚡ Method 2: The "One-Shot" Execution (Pro Method)
+This is the most efficient method for rapid deployment on any workstation without manual downloading. It fetches the latest code directly from this repository and executes it in memory (**Fileless Execution**).
+
+**Instructions:** Open an **Administrative PowerShell** window and run:
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex (New-Object System.Net.WebClient).DownloadString('[https://raw.githubusercontent.com/gaganbisen08/IT-Automation-Toolkit/main/MaintenanceToolkit.ps1](https://raw.githubusercontent.com/gaganbisen08/IT-Automation-Toolkit/main/MaintenanceToolkit.ps1)')
