@@ -37,4 +37,4 @@ This is the most efficient method for rapid deployment on any workstation withou
 **Instructions:** Open an **Administrative PowerShell** window and run:
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex (New-Object System.Net.WebClient).DownloadString('[https://raw.githubusercontent.com/gaganbisen08/IT-Automation-Toolkit/main/MaintenanceToolkit.ps1](https://raw.githubusercontent.com/gaganbisen08/IT-Automation-Toolkit/main/MaintenanceToolkit.ps1)')
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex (Invoke-RestMethod -Uri 'https://github.com/gaganbisen08/IT-Automation-Toolkit/releases/download/Windows_Dignosis/MaintenanceToolkit.ps1')
