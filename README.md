@@ -8,8 +8,9 @@ In a corporate IT environment, efficiency is key. This **PowerShell-based automa
 ## ⚡ Quick Execution (The "One-Shot" Method)
 For rapid deployment on any workstation without manual downloading, run this single command in an **Administrative PowerShell** window. It fetches the latest version directly from this repository and executes it in memory:
 
----powershell
+```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex (New-Object System.Net.WebClient).DownloadString('[https://raw.githubusercontent.com/gaganbisen08/IT-Automation-Toolkit/main/MaintenanceToolkit.ps1](https://raw.githubusercontent.com/gaganbisen08/IT-Automation-Toolkit/main/MaintenanceToolkit.ps1)')
+
 🔍 Command Technical Breakdown
 Understanding the underlying mechanics is critical for security compliance:
 
@@ -22,13 +23,27 @@ iex (Invoke-Expression): Enables Fileless Execution by running the script direct
 DownloadString: Fetches the "Raw" code text directly from the GitHub repository for immediate processing.
 
 🚀 Key Modules & Functionality
-🔍 System Health Audit: Leverages CIM/WMI instances to instantly report CPU specs, total RAM, and OS version for rapid asset inventory.
+1. 🔍 System Health Audit
+Leverages CIM/WMI instances to instantly report CPU specs, total RAM, and OS version. This allows technicians to perform rapid asset inventory and hardware assessments without manual navigation.
 
-🧹 Proactive Disk Maintenance: Automates the purging of system and user temporary caches to resolve "System Sluggishness" tickets.
+2. 🧹 Proactive Disk Maintenance
+Automates the purging of:
 
-🌐 Network Stack Reset: Executes a one-click refresh of the TCP/IP stack (DNS Flush, IP Release/Renew) to fix 50% of connectivity issues instantly.
+Windows System Temp folders
 
-⚙️ Error Handling: Built with Try/Catch blocks to ensure the script skips protected files and continues execution without crashing.
+User Profile Temp caches
+
+Browser and System Prefetch data Effectively resolves "System Sluggishness" and "Disk Full" tickets in seconds.
+
+3. 🌐 Network Stack Reset
+Executes a one-click refresh of the TCP/IP stack including:
+
+DNS Flush: Clears corrupted DNS caches.
+
+IP Release/Renew: Requests a fresh lease from the DHCP server. Fixes 50% of connectivity and VPN-related issues instantly.
+
+4. ⚙️ Error Handling & Reliability
+Built with Try/Catch blocks to ensure the script skips protected system files (files in use) and continues execution without crashing.
 
 🛠️ Technical Stack
 Language: PowerShell (Core/Desktop)
@@ -37,7 +52,7 @@ Management: Windows Management Framework (WMF)
 
 Deployment: GitHub (Raw Content Delivery)
 
-Concepts: ITIL-aligned automation, Security Principle of Least Privilege.
+Concepts: ITIL-aligned automation, Security Best Practices, Remote Deployment.
 
 📖 Alternative Execution Methods
 If you prefer manual execution, ensure you use a security bypass to maintain system integrity:
@@ -50,7 +65,7 @@ PowerShell
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 .\MaintenanceToolkit.ps1
 2. Trusting the File
-If the script was moved from another machine (e.g., a Linux partition), run this to unblock it:
+If the script was moved from another machine or partition, run this to unblock it:
 
 PowerShell
 
@@ -63,6 +78,6 @@ Security: Adheres to enterprise security standards by utilizing session-based by
 Reliability: Provides consistent diagnostic data, eliminating human error during hardware audits.
 
 👨‍💻 Author
-Gagan Bisen 📍  India
+Gagan Bisen 📍 Nagpur, Maharashtra, India
 
-Developed as part of a technical portfolio for IT Support, Desktop Support, and System Administration roles.
+🔗 LinkedIn | 📧 Email
